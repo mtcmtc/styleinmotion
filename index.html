@@ -1,0 +1,995 @@
+<!-- BR CAe Home Page - 2/6/16 - KEVIN LOVE -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./assets/css/brfs-e4242cd4ec.css">
+<link rel="stylesheet" type="text/css" href="./assets/css/brsitewide.css">
+<script src="./assets/product-pull-script.js" type="text/javascript"></script>
+<style type="text/css">
+
+/** HP Responsive Overrides **/
+	#previewBar{z-index: 100; position: relative;}
+
+/** General Overrides **/
+
+	a img {border: 0;}
+
+	img {max-width: 100%;}
+
+	.wcd-didot{font-family:DidotLTPro-Bold, garimond, 'times new roman', serif;}
+
+	.sp_top_lg{
+		margin-top:1.5em;
+	}
+
+	.toggle-universal-modal:hover, a[onclick]{
+		cursor:pointer;
+	}
+
+	.button_secondary{border: 1px solid #999;}
+	
+	.noborder{border:none;}
+
+	.header{
+	    line-height: normal;
+	}
+
+	.body{
+		position: relative;
+		overflow: hidden;
+	}
+
+	.overlay, .inner-overlay{
+		position:absolute;
+	}
+
+	.overlay.full-height{ 
+		overflow:hidden;
+		top:0;
+		right:0;
+		bottom:0;
+		left:0;
+		height:100%;
+	}
+
+	.align-center{align-self:center;-webkit-align-self:center;-moz-align-self:center;-ms-align-self:center;}
+
+	.align-bottom {align-self: flex-end;-webkit-align-self: flex-end;-moz-align-self: flex-end;-ms-align-self: flex-end;}
+
+	.center-column{
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-flex-direction: column;
+	    flex-direction: column;
+	    -webkit-align-items: center;
+	    align-items: center;
+	    -webkit-justify-content: center;
+	    justify-content: center;
+	}
+
+	#HPRegion p,#HPRegion h1,#HPRegion h2,#HPRegion h3{
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	.onesite .copy p{
+		font-size: 100%;
+	    letter-spacing: .05em;
+		line-height: 1em;
+	}
+
+	.onesite .ctas a{
+	    display: inline-block;
+	}
+
+	span.button_primary, .visual_cat .button_primary, span.button_secondary{
+		-webkit-transition: none;
+		-moz-transition: none;
+		transition: none;
+		font-weight: 100;
+	    letter-spacing: .1em;
+	}
+
+	.ctas.double a{width: 100px;}
+
+	.details a{text-decoration: underline;letter-spacing:2px;}
+
+	.onesite .white{color:#FFF;}
+	.onesite .ctas .button_primary.transparent{background: rgba(0,0,0,0);}
+
+	.onesite .ctas span.underline{background-color:transparent;border:none;border-bottom:3px solid #4f4f4f;color:#4f4f4f; padding: .2em 0;}
+	.onesite .button_primary.white{color: #4f4f4f;background-color: #FFF;border: 1px solid #999;}
+	.onesite .uncap{text-transform: none;}
+
+
+	span.button_primary.white:hover, span.button_primary.white:active,span.button_secondary:hover, span.button_secondary:active{color: #FFF;background-color: #000; border: 1px solid #000;}
+
+	/*Normal Underline CTAs*/
+	.onesite .ctas span.underline:hover,.onesite .ctas span.underline:active{background-color:transparent;color:#000; border-bottom:3px solid #000;}
+
+	/*White Underline CTAs*/
+	.onesite .ctas span.underline.white{color:#FFF;border:none;border-bottom:3px solid #FFF;}
+
+	.onesite .ctas span.underline.white:hover, .onesite .ctas span.underline.white:active{background-color:transparent;color:#FFF; border-bottom:3px solid #FFF;}
+
+	h3.heading-e{letter-spacing: 4px;} 
+
+
+/** K LOVE STYLES **/
+/** Kevin Love LP Styles **/
+.kl_lp_body * {font-family: futura, sans-serif;}
+.kl_lp_body, .top-block{max-width:1400px; margin:0 auto; display:block; position:relative; overflow: hidden;}
+.top-block .overlay.videoblock{top: 0;right: 0%;max-width: 65%;background-color: black;padding-left: 35%;}
+.top-block .overlay.videoblock video{width:100%;}
+.kl_lp_body .ctas.last-button a span.button_primary{padding:.75em 0;color:#000;background-color:#FEE702;}
+.mobile-page.kl_lp_body .ctas.last-button a{width:90%;}
+.mobile-page.kl_lp_body .ctas.last-button{ margin-top:3em;}
+
+.kl_lp_body .copy p{letter-spacing: 2px;line-height: 20px;width: 80%;margin: 0 auto;}
+.kl_lp_body .ctas a span.button_primary, .kl_lp_body .ctas span.button_secondary, .kl_lp_body .ctas span.button_secondary:hover, .kl_lp_body .ctas span.button_secondary:active{
+	color: #000;
+	background-color: transparent;
+	border: none;
+	z-index:5;
+	font-weight: lighter;
+	font-size:2rem;
+}
+.kl_lp_body .ctas a span.button_secondary:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 12px;
+    width: 100%;
+    background: #FEE702;
+    z-index: -1;
+}
+.kl_lp_body .main-content{margin-bottom:4em;}
+.kl_lp_body .product-pull-content{max-width: 600px;margin: 0 auto;}
+
+.desktop-page .top-block, .playvideo, .close-button{cursor: pointer;}
+.video-popup,.video-popup-overlay{display:none;position:absolute;top:0;}
+.video-popup-overlay{width:100%;height:100%;z-index: 601;background-color:rgba(0,0,0,.5);}
+.video-popup{right:0;left:0;margin:0 auto;width: 800px;height: 549px;z-index: 602;}
+.video-popup iframe{margin: 0 auto;width: 98%;display: block;clear: both;height: 100%;}
+.video-popup video{width:100%;}
+.video-popup .close-button{float: right;color: white;position: relative;font-size: 3em;margin-right: 1%;}
+.kl_lp_body .yellowline{border-bottom:1px solid #FEE702;margin-top:1em;margin-bottom:5em;z-index:3;}
+
+/**DROPDOWN MENU STYLES**/
+	.dropdownMenu {
+        text-align: center;
+        background: #FEE702;
+        width:90%;
+        margin-left: auto;
+	    margin-right: auto;
+    }
+    .dropdownMenu h3.heading-e{padding:2rem; font-size:2.2rem; font-weight:500;}
+    .dropdownMenu .flyoutMenu-trigger img {
+        vertical-align: middle;
+    }
+
+    .dropdownMenu .flyoutMenu-label a {
+        color: #000;
+        text-decoration: none;
+        letter-spacing: .125em;
+    }
+
+    .dropdownMenu .flyoutMenu-label p {
+        color: #000;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-family: futura-pt, Futura, "Hiragino Kaku Gothic Pro", sans-serif;
+        font-size: 200%;
+        font-weight: 700;
+        letter-spacing: .125em;
+        line-height: 30px;
+    }
+
+    .dropdownMenu .flyoutMenu-label img {
+        width: 1em;
+        display: inline-block;
+    }
+
+    .dropdownMenu .flyoutMenu-list {
+        background-color: #fff;
+    }
+
+    .dropdownMenu .flyoutMenu-list a {
+        display: block;
+        text-align: center;
+        /*border-bottom: 1px solid #CCC;*/
+        padding: 2.5% 0;
+        background-color: #fff;
+        color: #4F4F4F;
+        text-decoration: none;
+    }
+
+    .dropdownMenu .flyoutMenu-list a:visited {
+        color: #fff;
+    }
+
+    .dropdownMenu .flyoutMenu-list .g-1-4 {
+        color: #c4a459;
+        border: solid 1px #c4a459;
+        background: #fff;
+        /*width:24.4%;*/
+        margin: -1%;
+        padding: 0.5%;
+    }
+
+    .dropdownMenu .flyoutMenu-list .g-1-4 img {
+        width: 100%;
+    }
+
+    .dropdownMenu .flyoutMenu-list .sds_body-a {
+        text-transform: none;
+        color: #999;
+        line-height: 1.2;
+        width:100%;
+        font-size:100%;
+    }
+
+@media (min-width: 568px){
+	.onesite .copy p{
+		font-size: 2.2rem;
+	    line-height: normal;
+	}
+
+	.mobile-spotlight .ctas.double a{
+	    width: 160px;
+	}
+
+	.ctas .button_primary, .mobile-spotlight .overlay.details{
+	    font-size: 100%;
+	}
+}
+
+@media (min-width: 768px){
+	.header .sds_heading-b{font-size:3rem;}
+	.onesite .ctas.triple .button_primary, .visual_cat .button_primary {
+	    padding: .53em;
+	}
+	.kl_lp_body .copy p{letter-spacing: 2px;line-height: 1.5;width: 80%;margin: 0 auto;}
+	.kl_lp_body .ctas a span.button_primary, .kl_lp_body .ctas span.button_secondary, .kl_lp_body .ctas span.button_secondary:hover, .kl_lp_body .ctas span.button_secondary:active{
+		font-size:2.2rem;
+		font-weight:500;
+	}
+}
+
+@media (max-width: 1023px){
+	.show-at-xl{
+		display:none;
+	}
+}
+
+@media (min-width: 1024px){
+	.show-at-xl{
+		display:block;
+	}
+
+	.kl_lp_body .ctas a span.button_primary, .kl_lp_body .ctas span.button_secondary, .kl_lp_body .ctas span.button_secondary:hover, .kl_lp_body .ctas span.button_secondary:active{
+		font-size:1rem;
+	}
+
+	/*new style*/
+	span.button_primary, span.button_secondary{font-size: 100%;letter-spacing: 3px;}
+	.onesite .ctas span.underline{font-size:12px;}
+
+	/*new style*/
+	.onesite .copy p{font-size:17px; line-height:26px;}
+
+	.onesite .ctas.double a {width: 155px;}
+
+	#topNavWrapper{padding-bottom: 0;}
+
+	/** KLOVE STYLES **/
+	.desktop-page .copy-details{position: relative; z-index:5;}
+	.desktop-page .kl_lp_body .ctas.last-button a{width: 35%;margin: 0 auto;}
+	.desktop-page .kl_lp_body {margin-top: -6%;}
+	.kl_lp_body .product-pull-content{max-width: 990px;}
+
+	.desktop-page .section1 .copy-details{margin-left: -20%;margin-top: -20%;}
+	.desktop-page .section1 .main-content .ctas{padding-left: 10%;}
+	.desktop-page .section1 .videodiv video{background: url(./assets/desktop/s1/1_Suit_VidCover.jpg);}
+
+	.desktop-page .section2 .videodiv{margin-right:2em;margin-left:3em;}
+	.desktop-page .section2 .body{margin-right:3em;}
+	.desktop-page .section2 .copy-details{margin-left: -3%;margin-top: -13%;}
+	.desktop-page .section2 .main-content .ctas{padding-left: 14%;}
+	.desktop-page .section2 .yellowline{width: 250%;position: relative;margin-left: -38%;margin-top: 280%;}
+	.desktop-page .section2 .videodiv video{background: url(./assets/desktop/s2/2_OxfordShirt_VidCover.jpg);}
+
+	.desktop-page .section3 .videodiv{margin-left: -100%;margin-top:260%;}
+	.desktop-page .section3 .copy-details{margin-left: -12%;margin-top: -13%;}
+	.desktop-page .section3 .main-content .ctas{padding-left: 13%;}
+	.desktop-page .section3 .yellowline{width: 70%;position: absolute;left: -68%;top: 20%;}
+	.desktop-page .section3 .videodiv video{background: url(./assets/desktop/s3/3_Sweater_VidCover.jpg);}
+
+	.desktop-page .section4 .videodiv{margin-right:3em;margin-left:3em;}
+	.desktop-page .section4 .body{margin-right:3em;margin-left:3em;}
+	.desktop-page .section4 .copy-details{margin-left: -2%;margin-top: -13%;}
+	.desktop-page .section4 .main-content .ctas{padding-left: 13%;}
+	.desktop-page .section4 .yellowline{width: 40%;position: absolute;left: 90.7%;top: -50%;z-index: -1;}
+	.desktop-page .section4 .videodiv video{background: url(./assets/desktop/s4/4_TravelerPant_VidCover.jpg);}
+
+	.desktop-page .section5 .copy-details{margin-left: -20%;margin-top: -50%;}
+	.desktop-page .section5 .main-content .ctas{padding-left: 5%;}
+	.desktop-page .section5 .videodiv video{background: url(./assets/desktop/s5/5_WoolPant_VidCover.jpg);}
+
+	.desktop-page .main-content .videodiv{position:relative;z-index:4;}
+	.desktop-page .main-content .videodiv video{cursor:pointer;max-width: 100%;background-color:transparent;background-repeat:no-repeat;background-size:contain;}
+}
+
+@media (min-width: 1280px){
+    .onesite .ctas.double a {width: 155px;}
+}
+
+</style>
+
+<div id="kl_lp_container" class="sp_xl">
+	<!--MOBILE PAGE BEGIN-->
+	<div class="mobile-page kl_lp_body onesite relative hide-at-xl">
+		<div class="relative">
+			<a href="/browse/info.do?cid=1076156" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_suits');"><img src="./assets/mobile/Top_Section1.jpg" alt="style in motion"></a>
+			<a href="/browse/product.do?cid=1065892&vid=1&pid=542192003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_suits');" style="position:absolute;width:100%;height:57%;bottom:0;left:0"></a>
+		</div>
+		<div class="wrapper tx_center">
+			<div class="header"><p class="sds_heading-b">DETAILS</p></div>
+			<div class="copy sp"><p class="sds_body-a">
+				COMFORT AND MOVEMENT<br /><br />THIS PERFECT TRANSITIONAL PIECE FEATURES A NATURAL FLEXIBILITY THAT MOVES WITH YOU.
+			</p></div>
+			<div class="ctas sp_xl">
+				<a href="/browse/product.do?cid=1065892&vid=1&pid=542192003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_suit');" class="sp">
+					<span class="button_secondary relative white">SHOP THIS SUIT JACKET</span>
+				</a>
+				<br />
+				<a href="/browse/product.do?cid=1076161&pid=542195013" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_dresspants');">
+					<span class="button_secondary relative white">SHOP THIS SUIT PANT</span>
+				</a>
+			</div>
+			<div class="dropdownMenu sp_xl">
+	            <div class="flyoutMenu-trigger">
+	                <div class="flyoutMenu-label">
+	                    <a class="block" href="javascript:void(0)">
+	                        <h3 class="heading-e inline-block">SHOP SIMILAR STYLES &nbsp;</h3><span class="openCloseArrows"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="arrow"></span>
+	                    </a>
+	                </div>
+	            </div>
+
+	            <!-- START: Dynamic pull carousel -->
+	            <div class="flyoutMenu-list">
+	            	<div class="product-pull-content pp1 tx_center">
+						<div class="grid-root sp_lg">
+						</div>
+						<div class="ctas inline-block sp_xl tx_center">
+							<a href="/browse/category.do?cid=75310" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_suits');">
+								<span class="button_secondary relative white">SHOP SUITS</span>
+							</a>
+						</div>
+					</div>
+	            </div>
+	        </div>
+        </div>
+		<div class="relative">
+			<a href=" /browse/product.do?cid=1076637&vid=1&pid=581465003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_oxfordshirt');"><img src="./assets/mobile/Section2_Shirt.jpg" alt="style in motion"></a>
+			<div class="wrapper tx_center">
+				<div class="header"><p class="sds_heading-b">DETAILS</p></div>
+				<div class="copy sp"><p class="sds_body-a">
+					NATURAL FLEXIBILITY<br /><br />THE UNIQUE WEAVE OF THIS 100% COTTON SHIRT HOLDS ITS SHAPE NO MATTER WHAT YOU PUT IT THROUGH.
+				</p></div>
+				<div class="ctas sp_xl">
+					<a href=" /browse/product.do?cid=1076637&vid=1&pid=581465003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_oxfordshirt');">
+						<span class="button_secondary relative white">SHOP THIS SHIRT</span>
+					</a>
+				</div>
+			</div>
+			<div class="dropdownMenu sp_xl">
+                <div class="flyoutMenu-trigger">
+                    <div class="flyoutMenu-label">
+                        <a class="block" href="javascript:void(0)">
+                            <h3 class="heading-e inline-block">SHOP SIMILAR STYLES &nbsp;</h3><span class="openCloseArrows"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="arrow"></span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- START: Dynamic pull carousel -->
+                <div class="flyoutMenu-list">
+                	<div class="product-pull-content pp2 tx_center">
+						<div class="grid-root sp_lg">
+						</div>
+						<div class="ctas inline-block sp_xl tx_center">
+							<a href="/browse/category.do?cid=44873&scrollToCid=1076637&style=1076637" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shopall_oxfordshirt');">
+								<span class="button_secondary relative white">SHOP ALL SHIRTS</span>
+							</a>
+						</div>
+					</div>
+                </div>
+            </div>
+		</div>
+		<div class="relative">
+			<a href="/browse/category.do?cid=1076161&style=1077068" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_sweater');"><img src="./assets/mobile/Section3_Sweater.jpg" alt="style in motion"></a>
+			<div class="wrapper tx_center">
+				<div class="header"><p class="sds_heading-b">DETAILS</p></div>
+				<div class="copy sp"><p class="sds_body-a">
+					MAXIMUM WICKING ABILITY<br /><br />COOLMAX MOVES MOISTURE AWAY FROM YOUR BODY TO KEEP YOU COOL AND DRY.
+				</p></div>
+				<div class="ctas sp_xl">
+					<a href="/browse/product.do?cid=1071883&vid=1&pid=583510003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_sweater');" class="sp">
+						<span class="button_secondary relative white">SHOP THIS SWEATER</span>
+					</a>
+				</div>
+			</div>
+			<div class="dropdownMenu sp_xl">
+                <div class="flyoutMenu-trigger">
+                    <div class="flyoutMenu-label">
+                        <a class="block" href="javascript:void(0)">
+                            <h3 class="heading-e inline-block">SHOP SIMILAR STYLES &nbsp;</h3><span class="openCloseArrows"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="arrow"></span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- START: Dynamic pull carousel -->
+                <div class="flyoutMenu-list">
+                	<div class="product-pull-content pp3 tx_center">
+						<div class="grid-root sp_lg">
+						</div>
+						<div class="ctas inline-block sp_xl tx_center">
+							<a href="/browse/category.do?cid=28660&scrollToCid=1071883" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shopall_sweater');">
+						<span class="button_secondary relative white">SHOP ALL SWEATERS</span>
+					</a>
+						</div>
+					</div>
+                </div>
+            </div>
+		</div>
+		<div class="relative">
+			<a href="/browse/product.do?cid=1008873&vid=1&pid=488420013" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_popup_shop_chino');"><img src="./assets/mobile/Section4_TravelerPant.jpg" alt="style in motion"></a>
+			<div class="wrapper tx_center">
+				<div class="header"><p class="sds_heading-b">DETAILS</p></div>
+				<div class="copy sp"><p class="sds_body-a">
+					EASE OF MOVEMENT<br /><br />FOR COMFORT AND UNSURPASSED RECOVERY ALL DAY LONG WITH A POLISHED FINISH. IN SLIM AND SKINNY FITS, TOO. AVAILABLE IN STORES 2/16.
+				</p></div>
+				<div class="ctas sp_xl">
+					<a href=" /browse/product.do?cid=1008873&vid=1&pid=488420013" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_popup_shop_chino');" class="sp">
+						<span class="button_secondary relative white">SHOP THIS PANT</span>
+					</a>
+				</div>
+			</div>
+			<div class="dropdownMenu sp_xl">
+                <div class="flyoutMenu-trigger">
+                    <div class="flyoutMenu-label">
+                        <a class="block" href="javascript:void(0)">
+                            <h3 class="heading-e inline-block">SHOP SIMILAR STYLES &nbsp;</h3><span class="openCloseArrows"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="arrow"></span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- START: Dynamic pull carousel -->
+                <div class="flyoutMenu-list">
+                	<div class="product-pull-content pp4 tx_center">
+						<div class="grid-root sp_lg">
+						</div>
+						<div class="ctas inline-block sp_xl tx_center">
+							<a href="/browse/product.do?cid=1008873&vid=1&pid=488420013" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_popup_shop_chino');">
+								<span class="button_secondary relative white">SHOP ALL TRAVELER PANTS</span>
+							</a>
+						</div>
+					</div>
+                </div>
+            </div>
+		</div>
+		<div class="relative">
+			<a href="/browse/product.do?cid=1072467&vid=1&pid=488332003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_pant');"><img src="./assets/mobile/Section5_WoolPant.jpg" alt="style in motion"></a>
+			<div class="wrapper tx_center">
+				<div class="header"><p class="sds_heading-b">DETAILS</p></div>
+				<div class="copy sp"><p class="sds_body-a">
+					STAIN REPELLENT AND WATER RESISTANT<br /><br />PERFORMANCE WOOL WITH A LONG-LASTING SOFTENESS AND DURABILITY FOR AN EXTENDED LIFE OF THE FABRIC.
+				</p></div>
+				<div class="ctas sp_xl">
+					<a href="/browse/product.do?cid=1072467&vid=1&pid=488332003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_pant');" class="sp">
+						<span class="button_secondary relative white">SHOP ALL NANOTEX PANTS</span>
+					</a>
+				</div>
+			</div>
+			<div class="dropdownMenu sp_xl">
+                <div class="flyoutMenu-trigger">
+                    <div class="flyoutMenu-label">
+                        <a class="block" href="javascript:void(0)">
+                            <h3 class="heading-e inline-block">SHOP SIMILAR STYLES &nbsp;</h3><span class="openCloseArrows"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="arrow"></span>
+                        </a>
+                    </div>
+                </div>
+
+
+                <!-- START: Dynamic pull carousel -->
+                <div class="flyoutMenu-list">
+                	<div class="product-pull-content pp5 tx_center">
+						<div class="grid-root sp_lg">
+						</div>
+						<div class="ctas inline-block sp_xl tx_center">
+							<a href="/browse/category.do?cid=1072457&scrollToCid=1072467" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shopall_pant');">
+								<span class="button_secondary relative white">SHOP ALL NANOTEX PANTS</span>
+							</a>
+						</div>
+					</div>
+                </div>
+            </div>
+		</div>
+		<div class="last-button ctas tx_center">
+			<a href="/browse/category.do?cid=13846" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_mnewarrivals');">
+				<span class="button_primary relative">SEE WHAT ELSE IS NEW</span>
+			</a>
+		</div>
+	</div>
+
+	<!--DESKTOP PAGE BEGIN-->
+
+	<div class="desktop-page onesite relative show-at-xl">
+		<div class="top-block relative">
+			<div class="invisible">
+				<picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="./assets/TopSection_new.png" media="(min-width: 1024px)">
+				 	<!--[if IE 9]></video><![endif]-->
+					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="style in motion">
+				</picture>
+			</div>
+			<div class="overlay videoblock">
+				<video muted autoplay loop poster="./assets/videoposter.jpg">
+				  <source src="./assets/StyleInMotion_BB_4mb_ver.mp4" type="video/mp4" media="screen and (min-width:1024px)">
+				  Your browser does not support the video tag.
+				</video>
+			</div>
+			<div class="overlay full-height">
+				<picture>
+					<!--[if IE 9]><video style="display: none;"><![endif]-->
+					<source srcset="./assets/TopSection.png" media="(min-width: 1024px)">
+				 	<!--[if IE 9]></video><![endif]-->
+					<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB2aWV3Qm94PSIwIDAgMSAxIj4KPC9zdmc+Cg==" alt="style in motion">
+				</picture>
+			</div>
+		</div>
+		<!-- MAIN BODY CONTAINER -->
+		<div class="kl_lp_body">
+			<div class="grid-root">
+				<div class="g-1-24">
+				</div><div class="g-11-12">
+					<div class="section1 klove-section">
+						<div class="main-content grid-root">
+							<div class="g-xl-5-12">
+								<a href="/browse/product.do?cid=1065892&vid=1&pid=542192003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_all_suits');"><img alt="style in motion" src="./assets/desktop/s1/1_Suit-KL_IMG.jpg"></a>
+							</div><div class="g-1-1 g-xl-7-12 align-center">
+								<div class="grid-root">
+									<div class="g-xl-7-12">
+										<div class="videodiv playvideo">
+											<video poster="data:image/gif,AAAA">
+											  <source src="./assets/desktop/video/Chinosuit2.mp4" type="video/mp4">
+											  Your browser does not support the video tag.
+											</video> 
+										</div>
+									</div><div class="g-xl-5-12">
+										<div class="copy-details sp">
+											<a href onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_all_suits');"><img alt="style in motion" src="./assets/desktop/s1/1_Suit_DETAILS.png"></a>
+										</div>
+										<div class="ctas sp_top_lg">
+											<a href="/browse/product.do?cid=1065892&vid=1&pid=542192003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_suit');" class="sp">
+												<span class="button_secondary relative white">SHOP THIS BLAZER</span>
+											</a>
+											<a href="/browse/product.do?cid=1076161&pid=542195013" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_dresspants');">
+												<span class="button_secondary relative white">SHOP THIS DRESS PANT</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="tx_center sp_xl"><h3 class="heading-e inline-block">SHOP SIMILAR STYLES</h3></div>
+
+						<div class="product-pull-content pp1 tx_center">
+							<div class="grid-root sp_lg">
+							</div>
+							<div class="ctas inline-block sp_xl tx_center">
+								<a href="/browse/category.do?cid=75310" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_all_suits');">
+									<span class="button_secondary relative white">SHOP ALL SUITING</span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="block yellowline"></div>
+
+					<div class="section2 klove-section">					
+						<div class="show-at-xl">
+							<div class="main-content grid-root">
+								<div class="g-xl-5-12">
+									<div class="videodiv playvideo">
+										<video poster="data:image/gif,AAAA">
+										  <source src="./assets/desktop/video/Oxford2.mp4" type="video/mp4">
+										  Your browser does not support the video tag.
+										</video> 
+									</div>
+									<div class="copy-details sp">
+										<a class="playvideo" style="position:absolute;width:100%;height: 27%;top: 0;left:0;"></a>
+										<a onclick><img alt="style in motion" src="./assets/desktop/s2/2_OxfordShirt_DETAILS.png"></a>
+									</div>
+									<div class="ctas sp_top_lg">
+										<a href=" /browse/product.do?cid=1076637&vid=1&pid=581465003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_oxfordshirt');" class="sp">
+											<span class="button_secondary relative white">SHOP THIS SHIRT</span>
+										</a>
+									</div>
+								</div><div class="g-xl-1-12">
+									<div class="yellowline"></div>
+								</div><div class="g-xl-1-2 align-center">
+									<div class="body">
+										<a href=" /browse/product.do?cid=1076637&vid=1&pid=581465003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_oxfordshirt');"><img alt="style in motion" src="./assets/desktop/s2/2_OxfordShirt_IMG.jpg"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="tx_center sp_xl"><h3 class="heading-e inline-block">SHOP SIMILAR STYLES</h3></div>
+
+						<div class="product-pull-content pp2 tx_center">
+							<div class="grid-root sp_lg">
+							</div>
+							<div class="ctas inline-block sp_xl tx_center">
+								<a href="/browse/category.do?cid=44873&scrollToCid=1076637&style=1076637" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shopall_oxfordshirt');">
+									<span class="button_secondary relative white">SHOP ALL SHIRTS</span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="block yellowline"></div>
+
+
+					<div class="section3 klove-section">					
+						<div class="show-at-xl">
+							<div class="main-content grid-root">
+								<div class="g-xl-7-12">
+									<a href="/browse/product.do?cid=1071883&vid=1&pid=583510003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_suits');" ><img alt="style in motion" src="./assets/desktop/s3/3_Sweater-KL_IMG.jpg"></a>
+								</div><div class="g-xl-4-24 align-bottom">
+									<div class="videodiv playvideo">
+										<video poster="data:image/gif,AAAA">
+										  <source src="./assets/desktop/video/Sweater2.mp4" type="video/mp4">
+										  Your browser does not support the video tag.
+										</video> 
+									</div>
+								</div><div class="g-xl-6-24 align-center">
+									<div class="copy-details sp">
+										<div class="yellowline"></div>
+										<a href="/browse/product.do?cid=1071883&vid=1&pid=583510003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_suits');"><img alt="style in motion" src="./assets/desktop/s3/3_Sweater_DETAILS.png"></a>
+									</div>
+									<div class="ctas sp_top_lg">
+										<a href="/browse/product.do?cid=1071883&vid=1&pid=583510003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_suits');" class="sp">
+											<span class="button_secondary relative white">SHOP THIS SWEATER</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="tx_center sp_xl"><h3 class="heading-e inline-block">SHOP SIMILAR STYLES</h3></div>
+
+						<div class="product-pull-content pp3 tx_center">
+							<div class="grid-root sp_lg">
+							</div>
+							<div class="ctas sp_xl">
+								<a href="/browse/category.do?cid=28660&scrollToCid=1071883" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shopall_sweater');">
+									<span class="button_secondary relative white">SHOP ALL SWEATERS</span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="block yellowline"></div>
+
+
+					<div class="section4 klove-section">					
+						<div class="show-at-xl">
+							<div class="main-content grid-root">
+								<div class="g-xl-5-12">
+									<div class="videodiv playvideo">
+										<video poster="data:image/gif,AAAA">
+										  <source src="./assets/desktop/video/ChinoPants2.mp4" type="video/mp4">
+										  Your browser does not support the video tag.
+										</video> 
+									</div>
+									<div class="copy-details sp">
+										<div class="yellowline"></div>
+										<a class="playvideo" style="position:absolute;width:100%;height: 23%;top: 0;left:0;"></a>
+										<a href="/browse/product.do?cid=1008873&vid=1&pid=488420013" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_popup_shop_chino');"><img alt="style in motion" src="./assets/desktop/s4/4_TravelerPant_DETAILS.png"></a>
+									</div>
+									<div class="ctas sp_top_lg">
+										<a href="/browse/product.do?cid=1008873&vid=1&pid=488420013" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_popup_shop_chino');" class="sp">
+											<span class="button_secondary relative white">SHOP THIS PANT</span>
+										</a>
+									</div>
+								</div><div class="g-xl-14-24">
+									<div class="body">
+										<a href="/browse/product.do?cid=1008873&vid=1&pid=488420013" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_popup_shop_chino');"><img alt="style in motion" src="./assets/desktop/s4/4_TravelerPant_IMG.jpg"></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+						<div class="tx_center sp_xl"><h3 class="heading-e inline-block">SHOP SIMILAR STYLES</h3></div>
+
+
+						<div class="product-pull-content pp4 tx_center">
+							<div class="grid-root sp_lg">
+							</div>
+							<div class="ctas inline-block sp_xl tx_center">
+								<a href="/browse/category.do?cid=35878&scrollToCid=1008873" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shopall_chino');">
+									<span class="button_secondary relative white">SHOP ALL TRAVELER PANTS</span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="block yellowline"></div>
+
+
+					<div class="section5 klove-section">
+						<div class="show-at-xl">
+							<div class="main-content grid-root">
+								<div class="g-xl-11-24">
+									<a href="/browse/product.do?cid=1072467&vid=1&pid=488332003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_pant');"><img alt="style in motion" src="./assets/desktop/s5/5_WoolPant-KL_IMG.jpg"></a>
+								</div><div class="g-xl-7-24 align-center">
+									<div class="videodiv playvideo">
+										<video poster="data:image/gif,AAAA">
+										  <source src="./assets/desktop/video/Nanopants2.mp4" type="video/mp4">
+										  Your browser does not support the video tag.
+										</video> 
+									</div>
+								</div><div class="g-xl-1-4 align-center">
+									<div class="copy-details sp">
+										<a href="/browse/product.do?cid=1072467&vid=1&pid=488332003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_pant');"><img alt="style in motion" src="./assets/desktop/s5/5_WoolPants_DETAILS.png"></a>
+									</div>
+									<div class="ctas sp_top_lg">
+										<a href="/browse/product.do?cid=1072467&vid=1&pid=488332003" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shop_pant');" class="sp">
+											<span class="button_secondary relative white">SHOP THIS PANT</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					
+						<div class="tx_center sp_xl"><h3 class="heading-e inline-block">SHOP SIMILAR STYLES</h3></div>
+
+
+						<div class="product-pull-content pp5 tx_center">
+							<div class="grid-root sp_lg">
+							</div>
+							<div class="ctas inline-block sp_xl tx_center">
+								<a href="/browse/category.do?cid=1072457&scrollToCid=1072467" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_shopall_pant');">
+									<span class="button_secondary relative white">SHOP ALL NANOTEX PANTS</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div><div class="g-1-24"></div>
+			</div>
+			<div class="last-button ctas tx_center">
+				<a href="/browse/category.do?cid=13846" onclick="return wcdLib.contentItemLinkWithFacet(this,'','m_everyday_performance_mnewarrivals');">
+					<span class="heading-e button_primary relative">SEE WHAT ELSE IS NEW</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="video-popup">
+			<div class="close-button">
+	            <span class="heading-a white">x</span>
+	        </div>
+			<iframe allow="autoplay" id="klove-video" src="https://player.vimeo.com/video/200270763" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
+		<div class="video-popup-overlay"></div>
+	</div>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+<script type="text/javascript">
+jQuery(function($){
+
+	function videoEndHandlers(){
+		jQuery(".videodiv video").on('ended', function(){
+			var video = jQuery(this)[0];
+			video.load();
+		})
+	}
+
+	function playTopVideo(){
+		var iframe = document.getElementById("klove-video"),
+			player = new Vimeo.Player(iframe);
+		var postervid = jQuery(".videoblock video")[0]
+
+		postervid.pause();
+		player.play();
+	}
+
+	function hidePopup(){
+		var iframe = document.getElementById("klove-video"),
+			player = new Vimeo.Player(iframe);
+		var postervid = jQuery(".videoblock video")[0]
+
+		jQuery('.video-popup-overlay').hide();
+        jQuery('.video-popup').hide();
+        
+        postervid.play();
+        player.unload();
+	}
+
+	function attachClickHandlers() {
+
+		jQuery(".klove-section").each(function(){
+			var playvideo = jQuery(this).find('.playvideo');
+			var sectionvid = jQuery(this).find('.videodiv video')[0];
+
+			jQuery(playvideo).click(function(){
+				if(sectionvid.paused){
+					sectionvid.play();
+				}else sectionvid.pause();
+			})
+		});
+
+		var iframe = document.getElementById("klove-video"),
+			player = new Vimeo.Player(iframe);
+
+		player.on('ended', function(data) {
+		    // data is an object containing properties specific to that event
+		    setTimeout(function(){player.unload();}, 100);
+		    
+		});
+
+	    jQuery(".top-block").click(function(){
+	        var popupPositionY = jQuery(window).height() * 0.02;
+
+	        jQuery('.video-popup').css('top', popupPositionY)
+
+	        jQuery('.video-popup-overlay').show();
+	        jQuery('.video-popup').show();
+	        playTopVideo();
+	        
+	    });
+
+	    jQuery(".video-popup-overlay, .video-popup .close-button").click(function(e){
+	    	hidePopup();
+	    });
+
+	    jQuery(document).on('keyup',function(evt) {
+		    if (evt.keyCode == 27) {
+		        hidePopup();
+		    }
+		});
+	}
+
+	jQuery(document).ready(function(){
+		videoEndHandlers();
+		attachClickHandlers();
+	});
+
+})
+</script>
+<script type="text/javascript">
+//Accordion Menu Manager
+  wcdAccordionMenu = {
+    model : {
+      animationInProgress : false
+    },
+
+    init : function() {
+        jQuery('.flyoutMenu-list').css({'display':'none'});
+        jQuery('.flyoutMenu-trigger').each(function() {
+          var flyoutLabelImg = wcdAccordionMenu.getImgSrc(jQuery(this));
+          jQuery(this).find('.flyoutMenu-label img').attr('src',flyoutLabelImg.closed);
+        });
+
+        jQuery('.flyoutMenu-trigger').on('click',function(event) {
+          wcdAccordionMenu.expandCollapse(jQuery(this));
+        });
+
+    },
+
+    getImgSrc : function(obj) {
+      if (obj.children('.flyoutMenu-label').hasClass('white-label')) {
+        
+      }
+      else {
+        var openSrc = "./assets/Arrow_Close_Black.png ";
+        var closedSrc = "./assets/Arrow_Open_Black.png ";
+      }
+      var assetObj = {open:openSrc,closed:closedSrc};
+      return assetObj;
+    },
+
+    expandCollapse : function(obj) {
+      if (wcdAccordionMenu.model.animationInProgress) return false;
+      wcdAccordionMenu.model.animationInProgress = true;
+      var targetDiv = obj.next('.flyoutMenu-list');
+      var flyoutLabelImg = wcdAccordionMenu.getImgSrc(obj);
+      var targetImg = obj.find('.flyoutMenu-label img');
+      if (obj.hasClass('open')) {
+        obj.removeClass('open');
+        targetImg.attr('src',flyoutLabelImg.closed);
+        targetDiv.slideUp(250,'linear',function() {
+          wcdAccordionMenu.model.animationInProgress = false;
+        });
+      }
+      else {
+        obj.addClass('open');
+        targetImg.attr('src',flyoutLabelImg.open);
+        targetDiv.slideDown(250,'swing');
+        jQuery('html, body').animate({scrollTop: obj.offset().top - 62}, 500, 'swing', function() {
+          wcdAccordionMenu.model.animationInProgress = false;
+        });
+      }
+    }
+  };
+
+  jQuery(document).ready(function(){
+  	wcdAccordionMenu.init();
+  })
+</script>
+<script type="text/javascript">
+jQuery(function($) {
+ /*  ================================================
+    OUTFIT PULLING UP IN HERE! (Actually down there)
+    ================================================ */
+
+    // pull suits
+    jQuery('.pp1 .grid-root').outfitPuller({
+    	local: false,
+        numOfOutfitsToDisplay: 4,
+        categoryId: 75310,
+        facetStyleId: 1065894,
+        ajaxFailHtml:               '<p class="new-arrivals-outfits-failed">Sorry, there was an error retrieving outfits.</p>',
+        ajaxDoneEventName:          'outfitPullerAjaxCallDoneG',
+        ajaxFailEventName:          'outfitPullerAjaxCallFailG'
+    });
+    // pull dress shirts
+    jQuery('.pp2 .grid-root').outfitPuller({
+    	local: false,
+        numOfOutfitsToDisplay: 4,
+        categoryId: 44866,
+        facetStyleId: 1126378,
+        ajaxFailHtml:               '<p class="new-arrivals-outfits-failed">Sorry, there was an error retrieving outfits.</p>',
+        ajaxDoneEventName:          'outfitPullerAjaxCallDoneG',
+        ajaxFailEventName:          'outfitPullerAjaxCallFailG'
+    });
+    // pull sweaters
+    jQuery('.pp3 .grid-root').outfitPuller({
+    	local: false,
+        numOfOutfitsToDisplay: 4,
+        categoryId: 28660,
+        facetStyleId: 1119446,
+        ajaxFailHtml:               '<p class="new-arrivals-outfits-failed">Sorry, there was an error retrieving outfits.</p>',
+        ajaxDoneEventName:          'outfitPullerAjaxCallDoneG',
+        ajaxFailEventName:          'outfitPullerAjaxCallFailG'
+    });
+    // pants
+    jQuery('.pp4 .grid-root').outfitPuller({
+    	local: false,
+        numOfOutfitsToDisplay: 4,
+        categoryId: 35878,
+        facetStyleId: 1135879,
+        ajaxFailHtml:               '<p class="new-arrivals-outfits-failed">Sorry, there was an error retrieving outfits.</p>',
+        ajaxDoneEventName:          'outfitPullerAjaxCallDoneG',
+        ajaxFailEventName:          'outfitPullerAjaxCallFailG'
+    });
+    // pull outfits for the Avery Pant
+    jQuery('.pp5 .grid-root').outfitPuller({
+    	local: false,
+        numOfOutfitsToDisplay: 4,
+        categoryId: 1072457,
+        facetStyleId: 1117275,
+        ajaxFailHtml:               '<p class="new-arrivals-outfits-failed">Sorry, there was an error retrieving outfits.</p>',
+        ajaxDoneEventName:          'outfitPullerAjaxCallDoneG',
+        ajaxFailEventName:          'outfitPullerAjaxCallFailG'
+    });
+});
+</script>
