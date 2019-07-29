@@ -23,7 +23,7 @@
             local:                      false,
             categoryId:                 null,
             facetStyleId:               null,
-            productSearchUrl:           'http://bananarepublic.gap.com/resources/productSearch/v1/search',
+            productSearchUrl:           'https://bananarepublic.gap.com/resources/productSearch/v1/search',
             outfitData:                 null,
             numOfOutfitsToDisplay:      5,
             imgClass:                   'WCD_outfit-image',
